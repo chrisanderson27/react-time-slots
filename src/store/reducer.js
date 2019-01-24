@@ -93,16 +93,11 @@ const reducer = (state = initialState, action) => {
                 reserved: reservedBoolean,
             }
 
-
-
             // newPhone = action.text;
             return {
                 ...state,
                 timeSlots
             }
-
-
-
         case actionTypes.TIME_SLOT_ITEM_PRESSED:
 
             return {

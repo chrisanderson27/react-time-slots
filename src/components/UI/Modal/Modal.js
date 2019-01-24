@@ -7,15 +7,10 @@ let name = null;
 let timeSlotInfo = null;
 class Modal extends Component {
 
-
-
-
     handleNameChange = (event) => {
-        // console.log(event.target.value)
         this.props.onNameChange(event.target.value);
     }
     handlePhoneChange = (event) => {
-        // console.log(event.target.value)
         this.props.onPhoneChange(event.target.value);
     }
 
@@ -37,15 +32,11 @@ class Modal extends Component {
         }
         return (
             <Aux>
-                {/* <!-- Modal --> */}
-                <div className="modal fade" id="timeSlotModal" tabIndex="-1" role="dialog" aria-labelledby="timeSlotModalLabel" aria-hidden="true">
+                <div className="modal fade" id="timeSlotModal" tabIndex="-1" role="dialog" aria-labelledby="timeSlotModalLabel" aria-hidden="true" data-backdrop="static">
                     <div className="modal-dialog modal-dialog-centered modal-lg" role="document">
                         <div className="modal-content">
                             <div className="modal-header text-center mx-auto ">
                                 <h4 className="modal-title mx-auto" id="timeSlotModalLabel">You've selected the time slot from <strong>{timeSlotInfo}</strong></h4>
-                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
                             </div>
                             <div className="modal-body d-flex align-items-center flex-column bd-highlight mb-3">
                                 <div className='row'>
@@ -64,26 +55,26 @@ class Modal extends Component {
                                             <label>Phone:</label>  {phone}
                                         </div>
                                         <br />
-                                        </div>
-</div>
-
-                                    </div>
-                                    <div className="modal-footer">
-                                        <i>*If BOTH your name and phone are not entered, this time slot will not be marked as reserved.</i>
-                                        <button type="button" className="btn btn-success" onClick={() => this.close()} data-dismiss="modal">Close</button>
                                     </div>
                                 </div>
+
+                            </div>
+                            <div className="modal-footer">
+                                <i>*If BOTH your name and phone are not entered, this time slot will not be marked as reserved.</i>
+                                <button type="button" className="btn btn-success" onClick={() => this.close()} data-dismiss="modal">Close</button>
                             </div>
                         </div>
+                    </div>
+                </div>
             </Aux>
-                    );
-                }
+        );
+    }
 
     close = () => {
-                        document.getElementById("phoneField").value = '';
-                    document.getElementById("nameField").value = '';
-                }
-            }
-            
-            
+        document.getElementById("phoneField").value = '';
+        document.getElementById("nameField").value = '';
+    }
+}
+
+
 export default Modal;

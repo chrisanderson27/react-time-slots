@@ -15,12 +15,6 @@ class TimeSlots extends Component {
     }
 
     componentWillMount() {
-        // console.log(this.props.timeSlotData)
-        // let i = this.props.startTime
-        // while (i < this.props.endTime) {
-        //     timeSlotList.push();
-        //     i++;
-        // }
         this.props.populateTimeSlotData();
     }
 
