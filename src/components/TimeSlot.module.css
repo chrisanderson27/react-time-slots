@@ -1,0 +1,19 @@
+li {
+    /* width: 100px; */
+    height: 125px;
+    width: 500px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 3px #bbb;
+    padding: 10px;
+    margin: 15px auto;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+.Reserved {
+    background-color: lightcoral;
+}
+
+.Open {
+background-color: whitesmoke;
+}

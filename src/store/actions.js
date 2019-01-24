@@ -1,0 +1,6 @@
+export const ADD = 'ADD';
+export const SUB = 'SUB';
+export const TIME_SLOT_ITEM_PRESSED = 'TIME_SLOT_ITEM_PRESSED';
+export const POPULATE_INITIAL_DATA = 'POPULATE_INITIAL_DATA';
+export const ON_NAME_CHANGED = 'ON_NAME_CHANGED';
+export const ON_PHONE_CHANGED = 'ON_PHONE_CHANGED';
