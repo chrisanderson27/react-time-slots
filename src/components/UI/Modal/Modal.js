@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from './Modal.module.css';
 import Aux from '../../hoc/ReactAux';
+import { formatTime } from '../../../services/time-slot-service'
 let selected = "";
 let phone = null;
 let name = null;
@@ -14,27 +15,12 @@ class Modal extends Component {
         this.props.onPhoneChange(event.target.value);
     }
 
-    formatTime(number) {
-        let numberToConvert = Number(number);
-        if (numberToConvert < 12) {
-            numberToConvert += ':00 am'
-        }
-        else if (numberToConvert == 12) {
-            numberToConvert += ':00 pm'
-        }
-        else {
-            numberToConvert = numberToConvert - 12 + ':00 pm'
-        }
-
-        return numberToConvert;
-    }
-
     render() {
         if (this.props.selectedTime) {
             selected = this.props.selectedTime;
             let selectedStartTime = (Object.keys(selected)[0]) + '';
             let endTime = +selectedStartTime + 1;
-            timeSlotInfo = this.formatTime(selectedStartTime) + ' to ' + this.formatTime(endTime);
+            timeSlotInfo = formatTime(selectedStartTime) + ' to ' + formatTime(endTime);
             name = <input id="nameField"
                 onChange={this.handleNameChange}
                 onBlur={this.handleNameChange}

@@ -1,21 +1,7 @@
 import styles from './TimeSlot.module.css'
 import Aux from './hoc/ReactAux';
 import React from 'react';
-
-const formatTime = (number) => {
-    let numberToConvert = Number(number);
-    if (numberToConvert < 12) {
-        numberToConvert += ':00 am'
-    }
-    else if (numberToConvert == 12) {
-        numberToConvert += ':00 pm'
-    }
-    else {
-        numberToConvert = numberToConvert - 12 + ':00 pm'
-    }
-
-    return numberToConvert;
-}
+import {formatTime} from '../services/time-slot-service'
 
 const TimeSlot = (props) => {
     let id = props.details;
@@ -36,7 +22,7 @@ const TimeSlot = (props) => {
 
                         <div className='row'>
                             <div className='col'>
-                                Time slot from <strong>{props.details}:00 </strong>to <strong>{+props.details + 1}:00</strong>
+                                Time slot from <strong>{formatTime(props.details)}</strong> to <strong>{formatTime(+props.details + 1)}</strong>
                                 <br />
                                 <br />
                                 <h5>{reserved}</h5>

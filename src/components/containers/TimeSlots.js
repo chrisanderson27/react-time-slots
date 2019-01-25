@@ -5,9 +5,7 @@ import { connect } from 'react-redux';
 import TimeSlot from '../TimeSlot';
 import Modal from '../UI/Modal/Modal';
 
-
 let timeSlotList = []
-
 
 class TimeSlots extends Component {
     state = {
