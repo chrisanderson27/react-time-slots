@@ -28,7 +28,7 @@ class Modal extends Component {
             phone = <input id="phoneField"
                 onChange={this.handlePhoneChange}
                 onBlur={this.handlePhoneChange}
-                type='phone' value={this.props.timeSlotData[selectedStartTime].person.phone} />
+                type='number' value={this.props.timeSlotData[selectedStartTime].person.phone} />
         }
         return (
             <Aux>
