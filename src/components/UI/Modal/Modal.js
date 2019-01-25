@@ -14,13 +14,27 @@ class Modal extends Component {
         this.props.onPhoneChange(event.target.value);
     }
 
+    formatTime(number) {
+        let numberToConvert = Number(number);
+        if (numberToConvert < 12) {
+            numberToConvert += ':00 am'
+        }
+        else if (numberToConvert == 12) {
+            numberToConvert += ':00 pm'
+        }
+        else {
+            numberToConvert = numberToConvert - 12 + ':00 pm'
+        }
+
+        return numberToConvert;
+    }
 
     render() {
         if (this.props.selectedTime) {
             selected = this.props.selectedTime;
             let selectedStartTime = (Object.keys(selected)[0]) + '';
             let endTime = +selectedStartTime + 1;
-            timeSlotInfo = selectedStartTime + ':00 to ' + endTime + ':00';
+            timeSlotInfo = this.formatTime(selectedStartTime) + ' to ' + this.formatTime(endTime);
             name = <input id="nameField"
                 onChange={this.handleNameChange}
                 onBlur={this.handleNameChange}
