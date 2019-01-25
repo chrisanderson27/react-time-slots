@@ -1,5 +1,5 @@
 import styles from './TimeSlot.module.css'
-import Aux from './hoc/Aux';
+import Aux from './hoc/ReactAux';
 import React, { Component } from 'react';
 
 class TimeSlot extends Component {

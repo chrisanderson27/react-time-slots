@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Aux from '../hoc/Aux';
+import Aux from '../hoc/ReactAux';
 import * as actionTypes from '../../store/actions';
 import { connect } from 'react-redux';
 import TimeSlot from '../TimeSlot';

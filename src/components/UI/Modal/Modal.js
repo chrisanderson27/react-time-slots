@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styles from './Modal.module.css';
-import Aux from '../../hoc/Aux';
+import Aux from '../../hoc/ReactAux';
 let selected = "";
 let phone = null;
 let name = null;
